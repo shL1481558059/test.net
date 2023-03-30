@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +15,28 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 app.UseStaticFiles();
+
+var wwwroot = Directory.Exists( "wwwroot");
+if (wwwroot)
+{
+    app.UseStaticFiles();
+}
+else
+{
+    app
+        .UseStaticFiles
+        (
+            new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider
+                (
+                    "wwwroot"
+                )
+                ,
+                RequestPath = ""
+            }
+        );
+}
 
 app.UseHttpsRedirection();
 
