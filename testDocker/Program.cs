@@ -19,6 +19,16 @@ app.UseStaticFiles();
 Console.WriteLine(File.Exists("/app/wwwroot/js/site.js"));
 Console.WriteLine(Directory.Exists(Directory.GetCurrentDirectory()));
 
+foreach (var s in Directory.EnumerateDirectories("/app"))
+{
+    Console.WriteLine(s);
+}
+
+foreach (var s in Directory.EnumerateFiles("/app"))
+{
+    Console.WriteLine(s);
+}
+
 var wwwroot = Directory.Exists( "wwwroot");
 if (wwwroot)
 {
