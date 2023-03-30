@@ -16,6 +16,8 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
+Console.WriteLine(Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/js")));
+
 var wwwroot = Directory.Exists( "wwwroot");
 if (wwwroot)
 {
@@ -23,11 +25,10 @@ if (wwwroot)
 }
 else
 {
-    app
-        .UseStaticFiles(new StaticFileOptions
+    app.UseStaticFiles(new StaticFileOptions
         {
             //资源所在的绝对路径。
-            FileProvider = new PhysicalFileProvider(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwwroot")),
+            FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
             //表示访问路径,必须'/'开头
             RequestPath = "/"
         });
