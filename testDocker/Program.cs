@@ -17,9 +17,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 Console.WriteLine(File.Exists("/app/wwwroot/js/site.js"));
-Console.WriteLine(File.Exists("app/wwwroot/js/site.js"));
-Console.WriteLine(File.Exists("wwwroot/js/site.js"));
-Console.WriteLine(Directory.Exists("app"));
+Console.WriteLine(Directory.GetCurrentDirectory());
 
 var wwwroot = Directory.Exists( "wwwroot");
 if (wwwroot)
