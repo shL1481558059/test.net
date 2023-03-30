@@ -16,6 +16,7 @@ namespace testDocker.Controllers
         public IActionResult Index(string? path)
         {
             path ??= "/";
+            ViewBag.thisPath = Directory.GetCurrentDirectory();
             ViewBag.s = path;
             ViewBag.dir = Directory.EnumerateDirectories(path).Select(p=>p.Replace("\\","/")).ToList();
             ViewBag.file = Directory.EnumerateFiles(path).ToList();
