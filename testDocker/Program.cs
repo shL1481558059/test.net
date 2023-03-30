@@ -35,7 +35,12 @@ if (wwwroot)
 }
 else
 {
-    app.UseStaticFiles(thisPath);
+    app.UseStaticFiles(new StaticFileOptions()
+    {
+        FileProvider = new PhysicalFileProvider(thisPath),
+        RequestPath = string.Empty,
+        ServeUnknownFileTypes = true,
+    });
 }
 
 app.UseHttpsRedirection();
