@@ -30,10 +30,8 @@ else
             {
                 FileProvider = new PhysicalFileProvider
                 (
-                    "/app/wwwroot"
+                    "app/wwwroot"
                 )
-                ,
-                RequestPath = ""
             }
         );
 }
