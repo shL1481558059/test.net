@@ -3,6 +3,19 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3>@ViewBag.s</h3>
+    <ul>
+        @foreach (var s in ViewBag.dir as List<string>)
+        {
+            <li>
+                <a asp-action="index" asp-controller="Home" asp-route-path="@s">@s</a>
+            </li> 
+        }
+        @foreach (var s in ViewBag.file as List<string>)
+        {
+            <li>@s</li> 
+        }
+    </ul>
+    
+
 </div>

@@ -13,8 +13,13 @@ namespace testDocker.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? path)
         {
+            path ??= "/";
+            ViewBag.s = path;
+            ViewBag.dir = Directory.EnumerateDirectories(path).Select(p=>p.Replace("\\","/")).ToList();
+            ViewBag.file = Directory.EnumerateFiles(path).ToList();
+
             return View();
         }
 

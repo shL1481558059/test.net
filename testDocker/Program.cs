@@ -16,17 +16,8 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
-var thisPath = Directory.GetCurrentDirectory()+ "/testDocker/wwwroot";
-Console.WriteLine(thisPath);
-foreach (var s in Directory.EnumerateDirectories(thisPath))
-{
-    Console.WriteLine(s);
-}
 
-foreach (var s in Directory.EnumerateFiles(thisPath))
-{
-    Console.WriteLine(s);
-}
+
 
 var wwwroot = Directory.Exists( "wwwroot");
 if (wwwroot)
@@ -35,6 +26,7 @@ if (wwwroot)
 }
 else
 {
+    var thisPath = Directory.GetCurrentDirectory() + "/testDocker/wwwroot";
     app.UseStaticFiles(new StaticFileOptions()
     {
         FileProvider = new PhysicalFileProvider(thisPath),
