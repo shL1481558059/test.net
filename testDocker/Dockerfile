@@ -15,8 +15,11 @@ RUN dotnet build "testDocker.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "testDocker.csproj" -c Release -o /app/publish /p:UseAppHost=false
+ADD ./bin/Release/netcoreapp1.1/centos.7-x64/publish /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+WORKDIR /app # IMPORTANT!
+
 ENTRYPOINT ["dotnet", "testDocker.dll"]
