@@ -24,16 +24,13 @@ if (wwwroot)
 else
 {
     app
-        .UseStaticFiles
-        (
-            new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider
-                (
-                    "app/wwwroot"
-                )
-            }
-        );
+        .UseStaticFiles(new StaticFileOptions
+        {
+            //资源所在的绝对路径。
+            FileProvider = new PhysicalFileProvider(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwwroot")),
+            //表示访问路径,必须'/'开头
+            RequestPath = "/"
+        });
 }
 
 app.UseHttpsRedirection();
