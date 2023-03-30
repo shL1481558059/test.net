@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\testDocker.csproj": {}
+    "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\testDocker.csproj": {}
   },
   "projects": {
-    "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\testDocker.csproj": {
+    "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\testDocker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\testDocker.csproj",
+        "projectUniqueName": "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\testDocker.csproj",
         "projectName": "testDocker",
-        "projectPath": "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\testDocker.csproj",
+        "projectPath": "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\testDocker.csproj",
         "packagesPath": "C:\\Users\\w\\.nuget\\packages\\",
-        "outputPath": "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\obj\\",
+        "outputPath": "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\wapp\\vs2022\\Shared\\NuGetPackages",

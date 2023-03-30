@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DH3cV6/HirmPJvL1Gq05LCBWL3ES5OqHHAvNRujDc6LX/Glv63duRbsXhXvsOh3JoqYXuW5FaE9GxxML9ukVYQ==",
+  "dgSpecHash": "lMRvQCXyz1uoWktJDaArH9/3oHdG1yLCQI64ZcJA8KU41V0JjtSR3U89RGXQB7MrAIYQjYMewqSXI/5FGV5PRA==",
   "success": true,
-  "projectFilePath": "E:\\A_Work\\shl_GitHub\\testDocker\\testDocker\\testDocker.csproj",
+  "projectFilePath": "E:\\A_Work\\shl_GitHub\\test.net\\testDocker\\testDocker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\w\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
   ],
