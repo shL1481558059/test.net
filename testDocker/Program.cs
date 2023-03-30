@@ -16,15 +16,14 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
-Console.WriteLine(File.Exists("/app/wwwroot/js/site.js"));
-Console.WriteLine(Directory.Exists(Directory.GetCurrentDirectory()));
-
-foreach (var s in Directory.EnumerateDirectories("/app/testDocker"))
+var thisPath = Directory.GetCurrentDirectory()+ "/testDocker/bin/Release/net6.0";
+Console.WriteLine(thisPath);
+foreach (var s in Directory.EnumerateDirectories(thisPath))
 {
     Console.WriteLine(s);
 }
 
-foreach (var s in Directory.EnumerateFiles("/app/testDocker"))
+foreach (var s in Directory.EnumerateFiles(thisPath))
 {
     Console.WriteLine(s);
 }
