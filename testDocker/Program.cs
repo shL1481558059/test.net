@@ -38,7 +38,7 @@ else
     app.UseStaticFiles(new StaticFileOptions
         {
             //资源所在的绝对路径。
-            FileProvider = new PhysicalFileProvider("/app/testDocker/wwwroot"),
+            FileProvider = new PhysicalFileProvider(thisPath),
             //表示访问路径,必须'/'开头
             RequestPath = "/"
         });
