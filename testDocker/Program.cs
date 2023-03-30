@@ -16,7 +16,7 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
-var thisPath = Directory.GetCurrentDirectory()+ "/testDocker/bin/Release/net6.0/wwwroot";
+var thisPath = Directory.GetCurrentDirectory()+ "/testDocker/wwwroot";
 Console.WriteLine(thisPath);
 foreach (var s in Directory.EnumerateDirectories(thisPath))
 {
