@@ -19,12 +19,12 @@ app.UseStaticFiles();
 Console.WriteLine(File.Exists("/app/wwwroot/js/site.js"));
 Console.WriteLine(Directory.Exists(Directory.GetCurrentDirectory()));
 
-foreach (var s in Directory.EnumerateDirectories("/app"))
+foreach (var s in Directory.EnumerateDirectories("/app/testDocker"))
 {
     Console.WriteLine(s);
 }
 
-foreach (var s in Directory.EnumerateFiles("/app"))
+foreach (var s in Directory.EnumerateFiles("/app/testDocker"))
 {
     Console.WriteLine(s);
 }
