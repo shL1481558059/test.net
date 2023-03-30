@@ -30,7 +30,7 @@ else
             {
                 FileProvider = new PhysicalFileProvider
                 (
-                    "wwwroot"
+                    "/app/wwwroot"
                 )
                 ,
                 RequestPath = ""
