@@ -3,8 +3,8 @@
 }
 
 <div class="text-center">
-    <h3>@ViewBag.thisPath</h3>
-    <h3>@ViewBag.s</h3>
+    <h3>当前路径 @ViewBag.thisPath</h3>
+    <h3>上一层 @ViewBag.s</h3>
     <ul>
         @foreach (var s in ViewBag.dir as List<string>)
         {
@@ -14,9 +14,18 @@
         }
         @foreach (var s in ViewBag.file as List<string>)
         {
-            <li>@s</li>
+            <li>
+                <a href="~/@s.Replace("/","")">@s.Replace("/","")</a>
+                <img src="@s.Replace("/","")">
+
+            </li>
         }
     </ul>
 
-
 </div>
+
+<form method="post" enctype="multipart/form-data" asp-action="FileUpload">
+    上传文件
+    <input multiple type="file" name="file" />
+    <input type="submit"/>
+</form>

@@ -17,24 +17,6 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 
-
-
-var wwwroot = Directory.Exists( "wwwroot");
-if (wwwroot)
-{
-    app.UseStaticFiles();
-}
-else
-{
-    var thisPath = Directory.GetCurrentDirectory() + "/testDocker/wwwroot";
-    app.UseStaticFiles(new StaticFileOptions()
-    {
-        FileProvider = new PhysicalFileProvider(thisPath),
-        RequestPath = string.Empty,
-        ServeUnknownFileTypes = true,
-    });
-}
-
 app.UseHttpsRedirection();
 
 

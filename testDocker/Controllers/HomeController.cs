@@ -15,13 +15,28 @@ namespace testDocker.Controllers
 
         public IActionResult Index(string? path)
         {
-            path ??= "/";
-            ViewBag.thisPath = Directory.GetCurrentDirectory();
+            path ??= AppDomain.CurrentDomain.BaseDirectory+"wwwroot";
+            ViewBag.thisPath = AppDomain.CurrentDomain.BaseDirectory + "wwwroot";
             ViewBag.s = path;
-            ViewBag.dir = Directory.EnumerateDirectories(path).Select(p=>p.Replace("\\","/")).ToList();
-            ViewBag.file = Directory.EnumerateFiles(path).ToList();
+            ViewBag.dir = Directory.EnumerateDirectories(path).Select(
+                p=>p.Replace("\\","/")
+                ).ToList();
+
+
+            ViewBag.file = Directory.EnumerateFiles(path).Select(p => p.Replace(path,"").Replace("\\", "/")).ToList();
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult FileUpload(IFormFile file)
+        {
+            
+            var path = AppDomain.CurrentDomain.BaseDirectory + $"wwwroot\\{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
+            var fs = new FileStream(path,FileMode.OpenOrCreate,FileAccess.ReadWrite);
+            file.CopyTo(fs);
+            fs.Close();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
