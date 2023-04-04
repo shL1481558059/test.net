@@ -15,9 +15,9 @@ namespace testDocker.Controllers
 
         public IActionResult Index(string? path)
         {
-            path ??= AppDomain.CurrentDomain.BaseDirectory+"wwwroot";
-            ViewBag.thisPath = AppDomain.CurrentDomain.BaseDirectory + "wwwroot";
-            ViewBag.s = path;
+            path ??= "/";
+            ViewBag.thisPath = AppDomain.CurrentDomain.BaseDirectory;
+            ViewBag.s = path.Remove(path.LastIndexOf("/"));
             ViewBag.dir = Directory.EnumerateDirectories(path).Select(
                 p=>p.Replace("\\","/")
                 ).ToList();

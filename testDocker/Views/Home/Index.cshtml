@@ -4,7 +4,7 @@
 
 <div class="text-center">
     <h3>当前路径 @ViewBag.thisPath</h3>
-    <h3>上一层 @ViewBag.s</h3>
+    <h3>上一层  <a asp-action="index" asp-controller="Home" asp-route-path="@ViewBag.s">@ViewBag.s</a>  </h3>
     <ul>
         @foreach (var s in ViewBag.dir as List<string>)
         {
