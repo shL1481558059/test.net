@@ -31,12 +31,20 @@ namespace testDocker.Controllers
         [HttpPost]
         public IActionResult FileUpload(IFormFile file)
         {
-            
-            var path = AppDomain.CurrentDomain.BaseDirectory + $"wwwroot\\{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
-            var fs = new FileStream(path,FileMode.OpenOrCreate,FileAccess.ReadWrite);
-            file.CopyTo(fs);
-            fs.Close();
-            return RedirectToAction("Index");
+            try
+            {
+                var path = AppDomain.CurrentDomain.BaseDirectory + $"wwwroot\\{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
+                var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                file.CopyTo(fs);
+                fs.Close();
+                return Ok("上传成功");
+            }
+            catch (Exception e)
+            {
+                return Ok("上传失败\r\n"+e.Message);
+                throw;
+            }
+           
         }
 
         public IActionResult Privacy()
