@@ -33,7 +33,7 @@ namespace testDocker.Controllers
         {
             try
             {
-                var path = AppDomain.CurrentDomain.BaseDirectory + $"wwwroot\\{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
+                var path = AppDomain.CurrentDomain.BaseDirectory + $"wwwroot/{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
                 var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 file.CopyTo(fs);
                 fs.Close();
